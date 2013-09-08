@@ -18,10 +18,25 @@
         <h3>
             <%
                 Object rectangleObj = request.getAttribute("area");
-                out.print("The area of the rectangle is: " + rectangleObj);
-                
+                if (rectangleObj == null) {
+                    // do nothing, assume that another calculation was performed
+                } else {
+                    out.print("The area of the rectangle is: " + rectangleObj);
+                }
+
                 Object circleObj = request.getAttribute("cArea");
-                out.print("The area of the circle is: " + circleObj);
+                if (circleObj == null) {
+                    // do nothing, assume that another calculation was performed                   
+                } else {
+                    out.print("The area of the circle is: " + circleObj);
+                }
+
+                Object triangleObj = request.getAttribute("tArea");
+                if (triangleObj == null) {
+                    // do nothing, assume that another calculation was performed                   
+                } else {
+                    out.print("The area of the triangle is: " + triangleObj);
+                }
             %>
         </h3>
     </body>
