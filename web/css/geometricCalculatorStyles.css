@@ -1,0 +1,34 @@
+/* 
+    Document   : calculatorStyles
+    Created on : Sep 6, 2013, 8:27:33 PM
+    Author     : Dawn
+    Description:
+        Provide styling for the Geometric calculators.
+*/
+
+button {
+    box-shadow: 1px 1px 1px 1px;
+    alignment-adjust: middle;
+}
+
+h1 { 
+    display: block;
+    text-align: center; 
+    font-family: cursive; 
+    font-style: italic; 
+    color: mediumvioletred;
+}
+
+h3 { 
+    display: block;
+    text-align: center; 
+    font-family: cursive; 
+    font-style: italic; 
+    color: mediumvioletred;
+}
+
+p {
+    text-align: center; 
+    font-family: cursive;
+    color: mediumvioletred;
+}
