@@ -1,3 +1,7 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package controller;
 
 import java.io.IOException;
@@ -12,14 +16,13 @@ import model.RectangleCalculatorModel;
 
 /**
  *
- * @author Dawn Bykowski
+ * @author Dawn Bykkowski
  */
-@WebServlet(name = "GeometricCalculatorController",
-        urlPatterns = {"/GeometricCalculatorController"})
-public class GeometricCalculatorController extends HttpServlet {
+@WebServlet(name = "RectangleCalculatorController",
+        urlPatterns = {"/RectangleCalculatorController"})
+public class RectangleCalculatorController extends HttpServlet {
 
-    private final static String RESULT_PAGE = "/result.jsp";
-
+     private final static String RESULT_PAGE = "/rectangleAreaForm.jsp";
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -34,53 +37,17 @@ public class GeometricCalculatorController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        try {         
-
-            // Values for challenge #1.
-            // Rectangle Attributes
-            // attributes from the rectangleAreaForm.html
+        try {
+            // Values for challenge #2 - Rectangle Attributes
+            // attributes from the rectangleAreaForm.jsp
             String length = request.getParameter("length");
             String width = request.getParameter("width");
             
-            // convert above rectangle parameters to Double value
-            double dblLength = Double.parseDouble(length);
-            double dblWidth = Double.parseDouble(width);
-
-            // calculate the area of the rectangle
-            double area = dblLength * dblWidth;
-
-            // set the attribute to the value of area to be passed to the view (result.jsp)
+            RectangleCalculatorModel rc = new RectangleCalculatorModel();
+            double area = rc.getArea(length, width);
+            
             request.setAttribute("area", area);
-
-//            // Circle attributes
-//            // attributes from the circleAreaForm.html
-//            String radius = request.getParameter("radius");
-//
-//            // convert above cicle parameter to Double value & set pi value
-//            double dblRadius = Double.parseDouble("radius");
-//            double pi = 3.14159265359;
-//
-//            // caluclate the area of the circle
-//            double cArea = pi * (dblRadius * dblRadius);
-//
-//            // set the attribute to the value of area to be passed to the view (result.jsp)
-//            request.setAttribute("cArea", cArea);
-//
-//            // Triangle attributes
-//            // attributes from the triangleAreaForm.html
-//            String sideA = request.getParameter("sideA");
-//            String sideB = request.getParameter("sideB");
-//
-//            // convert above triangle parameter to Double value
-//            double dblSideA = Double.parseDouble("sideA");
-//            double dblSideB = Double.parseDouble("sideB");
-//
-//            // caluclate the area of the triangle
-//            double tArea = Math.sqrt(Math.pow(dblSideA, 2) + Math.pow(dblSideB, 2));
-//
-//            // set the attribute to the value of area to be passed to the view (result.jsp)
-//            request.setAttribute("tArea", tArea);
-
+            
             // This object lets you forward both the request and response
             // objects to a destination page
             RequestDispatcher view =

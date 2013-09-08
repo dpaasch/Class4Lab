@@ -16,19 +16,31 @@
     <body style="background-image: url('images/geometry.png')">
         <h1>Please select a Geometric calculation option</h1>
             <center>
+            <!-- Challenge #1
             <button onclick="location.href='rectangleAreaForm.html';" 
+                name="rectangle" id="rectangle"/>
+            -->
+            <button onclick="location.href='rectangleAreaForm.jsp';" 
                 name="rectangle" id="rectangle"/>
                 <img src="images/rectangle_black.png"/>&nbsp;&nbsp;
                     <p>Area of a rectangle</p>
                     <br/>
             </button>
+            <!-- Challenge #1 
             <button onclick="location.href='circleAreaForm.html';"
+                    name="circle" id="circle"/>
+            -->
+            <button onclick="location.href='circleAreaForm.jsp';"
                     name="circle" id="circle"/>
                 <img src="images/circle_black.png">&nbsp;&nbsp;
                     <p>Area of a circle</p>
                     <br/>
             </button>  
+            <!-- Challenge #1
             <button onclick="location.href='triangleAreaForm.html';"
+                    name="triangle" id="triangle"/>
+            -->
+            <button onclick="location.href='triangleAreaForm.jsp';"
                     name="triangle" id="triangle"/>
                 <img src="images/triangle_black.png">&nbsp;&nbsp;
                     <p>Hypotenuse of a triangle</p>
