@@ -35,7 +35,7 @@
                 if (triangleObj == null) {
                     // do nothing, assume that another calculation was performed                   
                 } else {
-                    out.print("The area of the triangle is: " + triangleObj);
+                    out.print("The hypotenuse of the triangle is: " + triangleObj);
                 }
             %>
         </h3>

@@ -1,6 +1,6 @@
 <%-- 
     Document   : circleAreaForm
-    Created on : Sep 8, 2013, 5:10:49 PM
+    Created on : Sep 8, 2013, 4:54:38 PM
     Author     : Dawn Bykowski
 --%>
 
@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-<title>Circle Area Form (JSP)</title>
+        <title>Circle Area Form (JSP)</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link REL="StyleSheet" TYPE="text/css" 
               HREF="css/geometricCalculatorStyles.css">
@@ -17,10 +17,10 @@
     <body style="background-image: url('images/geometry.png')">
         <h1>Calculate the area of a Circle</h1>
         <form name="circleArea" id="circleArea" 
-              action="CirleCalculatorController" method="POST" 
+              action="CircleCalculatorController" method="POST" 
               onsubmit="return(validateCircle());">
             <!-- Get the Radius and set the name=radius for retrieval by the servlet -->
-            <p>Enter the Radius of the circle: 
+            <p>Enter the Radius of the circle:
                 <input type="text" name="radius" id="radius"/>
             </p>
             <br/>
@@ -31,14 +31,14 @@
             </center>
         </form>
         <br/>
-        <p>
+        <h3>
         <%
             if (request.getAttribute("cArea") != null) {
                 String result = request.getAttribute("cArea").toString();
                 out.print("The area of the circle is: " + result);
             }
         %>
-        </p>
+        </h3>
         <br/>
         <br/>
         <a href="index.jsp">Back</a>

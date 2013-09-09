@@ -41,7 +41,7 @@
         <%
             if (request.getAttribute("tArea") != null) {
                 String result = request.getAttribute("tArea").toString();
-                out.print("The area (hypotenuse) of the triangle is: " + result);
+                out.print("The hypotenuse of the triangle is: " + result);
             }
         %>
         </p>
