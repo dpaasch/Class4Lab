@@ -8,6 +8,10 @@
         <servlet-name>RectangleGeometricController</servlet-name>
         <servlet-class>controller.RectangleCalculatorController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CircleCalculatorController</servlet-name>
+        <servlet-class>controller.CircleCalculatorController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GeometricCalculatorController</servlet-name>
         <url-pattern>/GeometricCalculatorController</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>RectangleGeometricController</servlet-name>
         <url-pattern>/RectangleGeometricController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CircleCalculatorController</servlet-name>
+        <url-pattern>/CircleCalculatorController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

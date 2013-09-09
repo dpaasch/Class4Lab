@@ -8,17 +8,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.RectangleCalculatorModel;
+import model.CircleCalculatorModel;
 
 /**
  *
  * @author Dawn Bykkowski
  */
-@WebServlet(name = "RectangleCalculatorController",
-        urlPatterns = {"/RectangleCalculatorController"})
-public class RectangleCalculatorController extends HttpServlet {
+@WebServlet(name = "CircleCalculatorController",
+        urlPatterns = {"/CircleCalculatorController"})
+public class CircleCalculatorController extends HttpServlet {    
+    
+     private final static String RESULT_PAGE = "/circleAreaForm.jsp";
 
-     private final static String RESULT_PAGE = "/rectangleAreaForm.jsp";
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -34,16 +35,15 @@ public class RectangleCalculatorController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            // Values for challenge #2 - Rectangle Attributes
-            // attributes from the rectangleAreaForm.jsp
-            String length = request.getParameter("length");
-            String width = request.getParameter("width");
+            // Values for challenge #2 - Circle Attributes
+            // attributes from the circleAreaForm.jsp
+            String radius = request.getParameter("radius");
             
-            RectangleCalculatorModel rc = new RectangleCalculatorModel();
-            double area = rc.getArea(length, width);
+            CircleCalculatorModel cc = new CircleCalculatorModel();
+            double cArea = cc.getArea(radius);
             
             // set the attribute to the value of area to be passed to the view
-            request.setAttribute("area", area);
+            request.setAttribute("cArea", cArea);
             
             // This object lets you forward both the request and response
             // objects to a destination page

@@ -16,7 +16,7 @@
     <body style="background-image: url('images/geometry.png')">
         <h1>Please select a Geometric calculation option</h1>
             <center>
-            <!-- Challenge #1
+            <!-- Challenge #1 
             <button onclick="location.href='rectangleAreaForm.html';" 
                 name="rectangle" id="rectangle"/>
             -->

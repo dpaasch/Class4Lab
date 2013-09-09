@@ -17,11 +17,11 @@
         <h1>Your Geometric Calculation result:</h1>
         <h3>
             <%
-                Object rectangleObj = request.getAttribute("area");
-                if (rectangleObj == null) {
+                Object obj = request.getAttribute("area");
+                if (obj == null) {
                     // do nothing, assume that another calculation was performed
                 } else {
-                    out.print("The area of the rectangle is: " + rectangleObj);
+                    out.print("The area is: " + obj);
                 }
 
                 Object circleObj = request.getAttribute("cArea");
