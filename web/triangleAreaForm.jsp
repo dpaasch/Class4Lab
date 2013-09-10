@@ -47,6 +47,6 @@
         </p>
         <br/>
         <br/>
-        <a href="index.jsp">Back</a>
+        <a href="index.jsp">Geometric Calculator Home</a>
     </body>
 </html>

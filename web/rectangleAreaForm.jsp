@@ -17,7 +17,7 @@
     <body style="background-image: url('images/geometry.png')">
         <h1>Calculate the area of a Rectangle</h1>
         <form name="rectangleArea" id="rectangleArea" 
-              action="RectangleCalculatorController" method="POST" 
+              action="GeometricCalculatorController" method="POST" 
               onsubmit="return(validateRectangle());">
             <!-- Get the Length and set the name=length for retrieval by the servlet -->
             <p>Enter the Length of the rectangle: 
@@ -46,6 +46,6 @@
         </h3>
         <br/>
         <br/>
-        <a href="index.jsp">Back</a>
+        <a href="index.jsp">Geometric Calculator Home</a>
     </body>
 </html>

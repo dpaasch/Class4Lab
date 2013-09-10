@@ -33,52 +33,42 @@ public class GeometricCalculatorController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        try {         
 
-            // Values for challenge #1.
-            // Rectangle Attributes
-            // attributes from the rectangleAreaForm.html
-            String length = request.getParameter("length");
-            String width = request.getParameter("width");
-            
-            // convert above rectangle parameters to Double value
-            double dblLength = Double.parseDouble(length);
-            double dblWidth = Double.parseDouble(width);
+        // Rectangle Attributes - attributes from the rectangleAreaForm.html
+        String length = request.getParameter("length");
+        String width = request.getParameter("width");
+        // Circle attributes -attributes from the circleAreaForm.html
+        String radius = request.getParameter("radius");
+        // Triangle attributes - attributes from the triangleAreaForm.html
+        String sideA = request.getParameter("sideA");
+        String sideB = request.getParameter("sideB");
 
-            // calculate the area of the rectangle
-            double area = dblLength * dblWidth;
-
+        try {
+            if (length != null && width != null) {
+                // convert above rectangle parameters to Double value
+                double dblLength = Double.parseDouble(length);
+                double dblWidth = Double.parseDouble(width);
+                // calculate the area of the rectangle
+                double area = dblLength * dblWidth;
+                // set the attribute to the value of area to be passed to the view (result.jsp)
+                request.setAttribute("area", area);
+            } else if (radius != null) {
+                // convert above cicle parameter to Double value & set pi value
+                double dblRadius = Double.parseDouble(radius);
+                double pi = 3.14159265359;
+                // caluclate the area of the circle
+                Double cArea = pi * (dblRadius * dblRadius);
+                // set the attribute to the value of area to be passed to the view (result.jsp)
+                request.setAttribute("cArea", cArea);
+            } else {
+                // convert above triangle parameter to Double value
+            double dblSideA = Double.parseDouble(sideA);
+            double dblSideB = Double.parseDouble(sideB);
+            // caluclate the area of the triangle
+            double tArea = Math.sqrt(Math.pow(dblSideA, 2) + Math.pow(dblSideB, 2));
             // set the attribute to the value of area to be passed to the view (result.jsp)
-            request.setAttribute("area", area);
-
-//            // Circle attributes
-//            // attributes from the circleAreaForm.html
-//            String radius = request.getParameter("radius");
-//
-//            // convert above cicle parameter to Double value & set pi value
-//            double dblRadius = Double.parseDouble("radius");
-//            double pi = 3.14159265359;
-//
-//            // caluclate the area of the circle
-//            double cArea = pi * (dblRadius * dblRadius);
-//
-//            // set the attribute to the value of area to be passed to the view (result.jsp)
-//            request.setAttribute("cArea", cArea);
-//
-//            // Triangle attributes
-//            // attributes from the triangleAreaForm.html
-//            String sideA = request.getParameter("sideA");
-//            String sideB = request.getParameter("sideB");
-//
-//            // convert above triangle parameter to Double value
-//            double dblSideA = Double.parseDouble("sideA");
-//            double dblSideB = Double.parseDouble("sideB");
-//
-//            // caluclate the area of the triangle
-//            double tArea = Math.sqrt(Math.pow(dblSideA, 2) + Math.pow(dblSideB, 2));
-//
-//            // set the attribute to the value of area to be passed to the view (result.jsp)
-//            request.setAttribute("tArea", tArea);
+            request.setAttribute("tArea", tArea);
+            }
 
             // This object lets you forward both the request and response
             // objects to a destination page

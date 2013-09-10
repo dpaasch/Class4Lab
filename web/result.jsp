@@ -21,7 +21,7 @@
                 if (obj == null) {
                     // do nothing, assume that another calculation was performed
                 } else {
-                    out.print("The area is: " + obj);
+                    out.print("The area of the rectangle is: " + obj);
                 }
 
                 Object circleObj = request.getAttribute("cArea");
@@ -39,5 +39,7 @@
                 }
             %>
         </h3>
+        <br>
+        <a href="index.jsp">Geometric Calculator Home</a>
     </body>
 </html>

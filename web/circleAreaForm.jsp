@@ -17,7 +17,7 @@
     <body style="background-image: url('images/geometry.png')">
         <h1>Calculate the area of a Circle</h1>
         <form name="circleArea" id="circleArea" 
-              action="CircleCalculatorController" method="POST" 
+              action="GeometricCalculatorController" method="POST" 
               onsubmit="return(validateCircle());">
             <!-- Get the Radius and set the name=radius for retrieval by the servlet -->
             <p>Enter the Radius of the circle:
@@ -41,6 +41,6 @@
         </h3>
         <br/>
         <br/>
-        <a href="index.jsp">Back</a>
+        <a href="index.jsp">Geometric Calculator Home</a>
     </body>
 </html>
