@@ -7,12 +7,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.GeometricCalculatorModel;
 
 /**
+ * Challenge #2
  *
  * @author Dawn Bykowski
  */
-public class GeometricCalculatorController extends HttpServlet {
+public class GeometricCalculatorController_c2 extends HttpServlet {
 
     private final static String RESULT_PAGE = "/result.jsp";
 
@@ -39,31 +41,25 @@ public class GeometricCalculatorController extends HttpServlet {
         // Triangle attributes - attributes from the triangleAreaForm.html
         String sideA = request.getParameter("sideA");
         String sideB = request.getParameter("sideB");
+        // Model object 
+        GeometricCalculatorModel gcm;
 
         try {
             if (length != null && width != null) {
-                // convert above rectangle parameters to Double value
-                double dblLength = Double.parseDouble(length);
-                double dblWidth = Double.parseDouble(width);
-                // calculate the area of the rectangle
-                Double area = dblLength * dblWidth;
-                // set the attribute to the value of area to be passed to the view (result.jsp)
+                // Instantiate a new model object
+                gcm = new GeometricCalculatorModel();
+                double area = gcm.getArea(length, width);
+                // set the attribute to the value of area to be passed to the view
                 request.setAttribute("area", area);
             } else if (radius != null) {
-                // convert above cicle parameter to Double value & set pi value
-                double dblRadius = Double.parseDouble(radius);
-                double pi = 3.14159265359;
-                // caluclate the area of the circle
-                Double cArea = pi * (dblRadius * dblRadius);
-                // set the attribute to the value of area to be passed to the view (result.jsp)
+                gcm = new GeometricCalculatorModel();
+                double cArea = gcm.getCircleArea(radius);
+                // set the attribute to the value of cArea to be passed to the view
                 request.setAttribute("cArea", cArea);
             } else {
-                // convert above triangle parameter to Double value
-                double dblSideA = Double.parseDouble(sideA);
-                double dblSideB = Double.parseDouble(sideB);
-                // caluclate the area of the triangle
-                Double tArea = Math.sqrt(Math.pow(dblSideA, 2) + Math.pow(dblSideB, 2));
-                // set the attribute to the value of area to be passed to the view (result.jsp)
+                gcm = new GeometricCalculatorModel();
+                double tArea = gcm.getTriangleArea(sideA, sideB);
+                // set the attribute to the value of tArea to be passed to the view
                 request.setAttribute("tArea", tArea);
             }
 

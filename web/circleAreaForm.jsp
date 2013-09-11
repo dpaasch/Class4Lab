@@ -1,5 +1,5 @@
 <%-- 
-    Document   : circleAreaForm
+    Document   : circleAreaForm - Challenge #2
     Created on : Sep 8, 2013, 4:54:38 PM
     Author     : Dawn Bykowski
 --%>
@@ -17,7 +17,7 @@
     <body style="background-image: url('images/geometry.png')">
         <h1>Calculate the area of a Circle</h1>
         <form name="circleArea" id="circleArea" 
-              action="GeometricCalculatorController" method="POST" 
+              action="GeometricCalculatorController_c2" method="POST" 
               onsubmit="return(validateCircle());">
             <!-- Get the Radius and set the name=radius for retrieval by the servlet -->
             <p>Enter the Radius of the circle:

@@ -1,5 +1,5 @@
 <%-- 
-    Document   : rectangleAreaForm
+    Document   : rectangleAreaForm - Challenge #2
     Created on : Sep 8, 2013, 4:54:38 PM
     Author     : Dawn Bykowski
 --%>
@@ -17,7 +17,7 @@
     <body style="background-image: url('images/geometry.png')">
         <h1>Calculate the area of a Rectangle</h1>
         <form name="rectangleArea" id="rectangleArea" 
-              action="GeometricCalculatorController" method="POST" 
+              action="GeometricCalculatorController_c2" method="POST" 
               onsubmit="return(validateRectangle());">
             <!-- Get the Length and set the name=length for retrieval by the servlet -->
             <p>Enter the Length of the rectangle: 

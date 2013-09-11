@@ -1,5 +1,5 @@
 <%-- 
-    Document   : triangleAreaForm
+    Document   : triangleAreaForm - Challenge #2
     Created on : Sep 8, 2013, 5:14:20 PM
     Author     : Dawn Bykowski
 --%>
@@ -17,7 +17,7 @@
     <body style="background-image: url('images/geometry.png')">
         <h1>Calculate the hypotenuse of a Triangle</h1>
         <form name="triangleArea" id="triangleArea" 
-              action="GeometricCalculatorController" method="POST" 
+              action="GeometricCalculatorController_c2" method="POST" 
               onsubmit="return(validateTriangle());">
             <!-- Get Side A and set the name=sideA for retrieval by the servlet -->
             <p>Enter the Length of Side A: 
