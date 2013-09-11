@@ -31,16 +31,19 @@
             </center>
         </form>
         <br/>
-        <h3>
+    <center>
+        <img src="images/circle.png"/>
+    </center>
+    <h3>  
         <%
             if (request.getAttribute("cArea") != null) {
                 String result = request.getAttribute("cArea").toString();
                 out.print("The area of the circle is: " + result);
             }
         %>
-        </h3>
-        <br/>
-        <br/>
-        <a href="index.jsp">Geometric Calculator Home</a>
-    </body>
+    </h3>
+    <br/>
+    <br/>
+    <a href="index.jsp">Geometric Calculator Home</a>
+</body>
 </html>

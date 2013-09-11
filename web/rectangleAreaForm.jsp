@@ -36,16 +36,19 @@
             </center>
         </form>
         <br/>
-        <h3>
+    <center>
+        <img src="images/rectangle.png"/>
+    </center>
+    <h3>              
         <%
             if (request.getAttribute("area") != null) {
                 String result = request.getAttribute("area").toString();
                 out.print("The area of the rectangle is: " + result);
             }
         %>
-        </h3>
-        <br/>
-        <br/>
-        <a href="index.jsp">Geometric Calculator Home</a>
-    </body>
+    </h3>
+    <br/>
+    <br/>
+    <a href="index.jsp">Geometric Calculator Home</a>
+</body>
 </html>

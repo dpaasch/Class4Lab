@@ -21,7 +21,8 @@
                 <img src="images/rectangle.png"/>
             </center>
             <%
-                Object obj = request.getAttribute("area");
+                Object obj = "";
+                obj = request.getAttribute("area");
                 if (obj == null) {
                     // do nothing, assume that another calculation was performed
                 } else {
@@ -33,7 +34,8 @@
                 <img src="images/circle.png"/>
             </center>
             <%
-                Object circleObj = request.getAttribute("cArea");
+                Object circleObj = "";
+                circleObj = request.getAttribute("cArea");
                 if (circleObj == null) {
                     // do nothing, assume that another calculation was performed                   
                 } else {
@@ -45,7 +47,8 @@
                 <img src="images/triangle.png"/>
             </center>
             <%
-                Object triangleObj = request.getAttribute("tArea");
+                Object triangleObj = "";
+                triangleObj = request.getAttribute("tArea");
                 if (triangleObj == null) {
                     // do nothing, assume that another calculation was performed                   
                 } else {

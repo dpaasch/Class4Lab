@@ -16,7 +16,8 @@ import model.GeometricCalculatorModel;
  */
 public class GeometricCalculatorController_c2 extends HttpServlet {
 
-    private final static String RESULT_PAGE = "/result.jsp";
+    private String errMsg = "Entry cannot contain characters ~ Please enter a "
+            + "digit between 1 - 1000";
 
     /**
      * Processes requests for both HTTP
@@ -51,23 +52,34 @@ public class GeometricCalculatorController_c2 extends HttpServlet {
                 double area = gcm.getArea(length, width);
                 // set the attribute to the value of area to be passed to the view
                 request.setAttribute("area", area);
+                // This object lets you forward both the request and response
+                // objects to a destination page
+                RequestDispatcher view =
+                        request.getRequestDispatcher("/rectangleAreaForm.jsp");
+                view.forward(request, response);
             } else if (radius != null) {
                 gcm = new GeometricCalculatorModel();
                 double cArea = gcm.getCircleArea(radius);
                 // set the attribute to the value of cArea to be passed to the view
                 request.setAttribute("cArea", cArea);
+                // This object lets you forward both the request and response
+                // objects to a destination page
+                RequestDispatcher view =
+                        request.getRequestDispatcher("/circleAreaForm.jsp");
+                view.forward(request, response);
             } else {
                 gcm = new GeometricCalculatorModel();
                 double tArea = gcm.getTriangleArea(sideA, sideB);
                 // set the attribute to the value of tArea to be passed to the view
                 request.setAttribute("tArea", tArea);
+                // This object lets you forward both the request and response
+                // objects to a destination page
+                RequestDispatcher view =
+                        request.getRequestDispatcher("/triangleAreaForm.jsp");
+                view.forward(request, response);
             }
-
-            // This object lets you forward both the request and response
-            // objects to a destination page
-            RequestDispatcher view =
-                    request.getRequestDispatcher(RESULT_PAGE);
-            view.forward(request, response);
+        } catch (NumberFormatException nfe) {
+            errMsg = nfe.getLocalizedMessage();
         } finally {
             out.close();
         }

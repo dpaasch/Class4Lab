@@ -9,12 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * Challenge #1
  * @author Dawn Bykowski
  */
 public class GeometricCalculatorController extends HttpServlet {
 
     private final static String RESULT_PAGE = "/result.jsp";
+    private String errMsg = "Entry cannot contain characters ~ Please enter a "
+            + "digit between 1 - 1000";
 
     /**
      * Processes requests for both HTTP
@@ -72,6 +74,8 @@ public class GeometricCalculatorController extends HttpServlet {
             RequestDispatcher view =
                     request.getRequestDispatcher(RESULT_PAGE);
             view.forward(request, response);
+        } catch (NumberFormatException nfe) {
+            errMsg = nfe.getLocalizedMessage();
         } finally {
             out.close();
         }

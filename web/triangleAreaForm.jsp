@@ -35,18 +35,20 @@
                        value="Calculate Triangle Area"/>
             </center>
         </form>
-        </form>
         <br/>
-        <p>
+    <center>
+        <img src="images/triangle.png"/>
+    </center>
+    <h3>  
         <%
             if (request.getAttribute("tArea") != null) {
                 String result = request.getAttribute("tArea").toString();
                 out.print("The hypotenuse of the triangle is: " + result);
             }
         %>
-        </p>
-        <br/>
-        <br/>
+    </h3>
+    <br/>
+    <br/>
         <a href="index.jsp">Geometric Calculator Home</a>
     </body>
 </html>
