@@ -16,8 +16,7 @@
     <body style="background-image: url('images/geometry.png')">
         <h1>Your Geometric Calculation result:</h1>
         <h3>
-            <center>
-                <p>You calculated the Area of a rectangle</p><br/>
+            <center>                
                 <img src="images/rectangle.png"/>
             </center>
             <%
@@ -30,7 +29,6 @@
                 }
             %>
             <center>
-                <p>You calculated the Area of a circle</p><br/>
                 <img src="images/circle.png"/>
             </center>
             <%
@@ -43,7 +41,6 @@
                 }
             %>
             <center>
-                <p>You calculated the Hypotenuse of a triangle</p><br/>
                 <img src="images/triangle.png"/>
             </center>
             <%
